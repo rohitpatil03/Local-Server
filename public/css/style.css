@@ -1,0 +1,33 @@
+body {
+    margin: 20px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 10px 30px;
+    background-color: rgb(87, 87, 232);
+    color: white;
+    font-size: large;
+}
+
+.flexclass {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.flexbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.del_btn {
+    text-decoration: none;
+    padding: 10px 50px;
+    background-color: red;
+    color: white;
+    font-size: large;
+
+}
