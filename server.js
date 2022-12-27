@@ -3,7 +3,7 @@ const fileUpload = require('express-fileupload')
 const fs = require('fs')
 const path = require('path')
 
-const PORT = 4000
+const PORT = 8080
 server = express()
 
 server.set('view engine', 'ejs')
@@ -15,7 +15,7 @@ function checkFilesDir(){
     const fullPath = path.join(__dirname, 'uploads')
     fs.readdir(fullPath, (error, files) => {
         if (error) console.log(error)
-        files_array = files
+            files_array = files
         //files.forEach( file => files_array.push(file))
     })
 
