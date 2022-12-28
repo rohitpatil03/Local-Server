@@ -23,11 +23,15 @@
         <a href="download/<%=element%>" target="_blank">
             <h3><%= element %></h3>
         </a>
-        
-        <a href="home" onclick="onRemove('<%=element%>')">
-            <button class="del_btn">Delete</button>
-        </a>
-        
+        <div class="flexbox">
+            <a href="edit/<%=element%>">
+                <button class="btn">Edit</button>
+            </a>
+
+            <a href="home" onclick="onRemove('<%=element%>')">
+                <button class="del_btn">Delete</button>
+            </a>
+        </div>
     </div>
     <hr>
     <% }); %> 

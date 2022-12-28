@@ -2,12 +2,14 @@ const express = require('express')
 const fileUpload = require('express-fileupload')
 const fs = require('fs')
 const path = require('path')
+const bodyParser = require('body-parser');
 
 const PORT = 8080
 server = express()
 
 server.set('view engine', 'ejs')
 server.use(express.static('public'))
+server.use(bodyParser.urlencoded({ extended: true })); 
 server.use(fileUpload())
 
 let files_array = []
@@ -54,6 +56,28 @@ server.get("/upload", (req, res)=>{
     //res.send("Server is running ...")
     checkFilesDir()
     res.render("fileupload", {"status":""})
+})
+
+server.get("/edit/:element", (req, res)=>{
+    let file = req.params.element
+    let data;
+    fs.readFile(__dirname + '/uploads/' + file, "utf8", (err, info)=>{
+        if (err){
+            console.log(err);
+        }
+        data = info
+        res.render("editfile", {"fileName":`${file}`, "info" : data})
+    })
+    
+})
+
+server.post("/edit/:element", (req, res)=>{
+    let file = req.params.element
+    let data = req.body.fileInfo
+
+    fs.writeFile(__dirname + '/uploads/' + file, data, (err) => {
+        res.render("editfile", {"fileName":`${file}`, "info" : data})
+    });
 })
 
 server.post("/upload", (req, res)=>{
