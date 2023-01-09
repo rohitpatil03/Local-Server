@@ -14,8 +14,10 @@
         <br>
         <br>
         <form method="POST" action="/upload" enctype="multipart/form-data">
-            <input type="file" name="filename" class="btn" multiple required>&nbsp;&nbsp;&nbsp;
-            <input type="submit" value="submit" class="btn">
+            <div class="flexclass" style="gap: 10px;align-items: center;justify-content: center;">
+                <input type="file" name="filename" class="btn" multiple required>&nbsp;&nbsp;&nbsp;
+                <input type="submit" value="submit" class="btn">
+            </div>
         </form>
         <br>
         <h3><%= status %> </h3>

@@ -1,34 +1,63 @@
 body {
-    margin: 20px;
+  margin: 20px;
 }
 
 .btn {
-    text-decoration: none;
-    padding: 10px 30px;
-    background-color: rgb(87, 87, 232);
-    color: white;
-    font-size: large;
+  text-decoration: none;
+  padding: 10px 17px;
+  background-color: rgb(87, 87, 232);
+  color: white;
+  font-size: large;
 }
 
 .flexclass {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
 .flexbox {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2rem;
 }
 
-
 .del_btn {
-    text-decoration: none;
-    padding: 10px 50px;
-    background-color: red;
-    color: white;
-    font-size: large;
+  text-decoration: none;
+  padding: 10px 50px;
+  background-color: red;
+  color: white;
+  font-size: large;
+}
 
+.popup {
+  height: 40px;
+  width: 100%;
+  min-width: 150px;
+  max-width: 750px;
+  font-size: large;
+}
+
+.required {
+  border-color: red;
+}
+
+#info {
+  width: 750px;
+  height: 400px;
+}
+
+.sizefix {
+  width: 20%;
+}
+
+@media screen and (max-width: 600px) {
+  #info {
+    width: 300px;
+    height: 350px;
+  }
+  .sizefix {
+    width: 50%;
+  }
 }
